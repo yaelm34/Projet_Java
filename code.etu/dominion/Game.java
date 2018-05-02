@@ -31,6 +31,8 @@ public class Game {
 	 * Liste des cartes qui ont été écartées (trash)
 	 */
 	private CardList trashedCards;
+
+	private Scanner scanner;
 	
 	/**
 	 * Constructeur
@@ -46,6 +48,7 @@ public class Game {
 	 * - 8 (si 2 joueurs) ou 12 (si 3 ou 4 joueurs) Estate, Duchy et Province 	 * - 10 * (n-1) Curse où n est le nombre de joueurs dans la partie
 	 */
 	public Game(String[] playerNames, List<CardList> kingdomStacks) {
+		scanner = new Scanner (System.in);
 	}
 	
 	/**
@@ -154,6 +157,10 @@ public class Game {
 	 * aucune des piles non-vides de la réserve n'est une pile de Provinces, 
 	 * c'est que la partie est terminée)
 	 */
+	public String readLine() {
+		return scanner.nextLine();
+	}
+	
 	public boolean isFinished() {
 	}
 	
